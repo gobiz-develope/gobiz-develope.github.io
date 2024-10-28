@@ -1,0 +1,24 @@
+@use "../../helpers/mixins" as m;
+@use "../../helpers/variables" as v;
+@use "./mixin-var" as main;
+@use "./catalog-filter/catalog-filter" as catalog-filter;
+@use "./catalog-display/catalog-display" as catalog-display;
+
+.catalog {
+  min-height: 100vh;
+  padding: 0 v.$padding-horizontal-main v.$padding-vertical-main;
+  gap: 0.9vw;
+  overflow-x: hidden;
+  display: grid;
+  grid-template-columns: 20vw 1fr;
+  grid-auto-flow: column;
+  grid-auto-rows: 1fr;
+
+  &-filter {
+    @include catalog-filter.catalog-filter();
+  }
+
+  &-display {
+    @include catalog-display.catalog-display();
+  }
+}

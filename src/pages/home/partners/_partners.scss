@@ -1,0 +1,51 @@
+@use "./../../../helpers/mixins" as m;
+@use "./../../../helpers/variables" as v;
+
+@mixin partners() {
+  text-align: center;
+  padding: 0 v.$padding-horizontal-main v.$padding-vertical-main;
+
+  h2 {
+    font-size: 2rem;
+    color: map-get($map: v.$color, $key: "dark-gray");
+  }
+
+  .scrolling-logos {
+    width: 100%;
+    overflow: hidden;
+
+    .logo-container {
+      display: flex;
+      white-space: nowrap;
+
+      .logo-slide {
+        display: flex;
+        animation: scroll 30s linear infinite;
+        flex-shrink: 0; /* Agar gambar tidak mengecil */
+        width: max-content; /* Pastikan lebar slide mengikuti kontennya */
+
+        img {
+          width: 10vw;
+          height: 8vw;
+          object-fit: contain;
+          margin-left: 3.2vw;
+          filter: grayscale(1);
+          transition: filter 0.3s ease;
+
+          &:hover {
+            filter: grayscale(0);
+          }
+        }
+      }
+    }
+  }
+
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+}

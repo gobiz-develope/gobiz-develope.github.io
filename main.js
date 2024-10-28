@@ -10,35 +10,38 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "lenis/dist/lenis.css";
 
+const BASE_PATH = "/gobiz-develope.github.io";
+
 function loadPage(path) {
   const main = document.getElementById("main");
   main.innerHTML = "";
 
   let pageUrl;
   switch (path) {
+    case `${BASE_PATH}/`:
     case "/":
       pageUrl = "./src/pages/home/home.html";
       break;
-    case "/catalog":
+    case `${BASE_PATH}/catalog`:
       pageUrl = "./src/pages/catalog/catalog.html";
       break;
-    case "/product-detail":
+    case `${BASE_PATH}/product-detail`:
       pageUrl = "./src/pages/product-detail/product-detail.html";
       break;
-    case "/login":
+    case `${BASE_PATH}/login`:
       pageUrl = "./src/pages/login/login.html";
       break;
-    case "/register":
+    case `${BASE_PATH}/register`:
       pageUrl = "./src/pages/register/register.html";
       break;
-    case "/login-qr":
+    case `${BASE_PATH}/login-qr`:
       pageUrl = "./src/pages/login-qr/login-qr.html";
       break;
-    case "/dashboard":
+    case `${BASE_PATH}/dashboard`:
       pageUrl = "./src/pages/dashboard/dashboard.html";
       break;
     // default:
-    // pageUrl = "./pages/404.html";
+    // pageUrl = "./pages/404.html"; // Halaman 404 opsional
     //   break;
   }
 
@@ -48,19 +51,19 @@ function loadPage(path) {
       .then((response) => response.text())
       .then((data) => {
         main.innerHTML = data;
-        if (path === "/") {
+        if (path === `${BASE_PATH}/` || path === "/") {
           loadHome();
-        } else if (path === "/catalog") {
+        } else if (path === `${BASE_PATH}/catalog`) {
           loadCatalog();
-        } else if (path === "/product-detail") {
+        } else if (path === `${BASE_PATH}/product-detail`) {
           loadProductDetail();
-        } else if (path === "/login") {
+        } else if (path === `${BASE_PATH}/login`) {
           loadLogin();
-        } else if (path === "/register") {
+        } else if (path === `${BASE_PATH}/register`) {
           loadRegister();
-        } else if (path === "/login-qr") {
+        } else if (path === `${BASE_PATH}/login-qr`) {
           loadLoginQr();
-        } else if (path == "/dashboard") {
+        } else if (path === `${BASE_PATH}/dashboard`) {
           loadDashboard();
         }
       })
@@ -76,19 +79,24 @@ function navigate(path) {
   loadPage(path);
 }
 
+// Menangani event saat pengguna menekan tombol kembali di browser
 window.addEventListener("popstate", () => {
   loadPage(window.location.pathname);
 });
 
+// Memuat halaman sesuai URL saat pertama kali dimuat
 window.addEventListener("load", () => {
-  loadPage(window.location.pathname || "/");
+  loadPage(window.location.pathname || `${BASE_PATH}/`);
 });
 
+// Menangani klik tautan dengan class "to-link" agar menggunakan fungsi navigate
 document.addEventListener("click", (e) => {
   const target = e.target.closest("a");
   if (target && target.matches(".to-link")) {
     e.preventDefault();
-    const path = target.getAttribute("href");
+    const path = target.getAttribute("href").startsWith(BASE_PATH)
+      ? target.getAttribute("href")
+      : `${BASE_PATH}${target.getAttribute("href")}`;
     navigate(path);
   }
 });

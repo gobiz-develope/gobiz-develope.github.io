@@ -1,10 +1,10 @@
-import loadHome from "/src/pages/home/home.js";
-import loadCatalog from "/src/pages/catalog/catalog.js";
-import loadLogin from "/src/pages/login/login.js";
-import loadRegister from "/src/pages/register/register.js";
-import loadLoginQr from "/src/pages/login-qr/loginQr.js";
-import loadDashboard from "/src/pages/dashboard/dashboard.js";
-import loadProductDetail from "/src/pages/product-detail/productDetail.js";
+import loadHome from "./src/pages/home/home.js";
+import loadCatalog from "./src/pages/catalog/catalog.js";
+import loadLogin from "./src/pages/login/login.js";
+import loadRegister from "./src/pages/register/register.js";
+import loadLoginQr from "./src/pages/login-qr/loginQr.js";
+import loadDashboard from "./src/pages/dashboard/dashboard.js";
+import loadProductDetail from "./src/pages/product-detail/productDetail.js";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -17,25 +17,25 @@ function loadPage(path) {
   let pageUrl;
   switch (path) {
     case "/":
-      pageUrl = "/src/pages/home/home.html";
+      pageUrl = "./src/pages/home/home.html";
       break;
     case "/catalog":
-      pageUrl = "/src/pages/catalog/catalog.html";
+      pageUrl = "./src/pages/catalog/catalog.html";
       break;
     case "/product-detail":
-      pageUrl = "/src/pages/product-detail/product-detail.html";
+      pageUrl = "./src/pages/product-detail/product-detail.html";
       break;
     case "/login":
-      pageUrl = "/src/pages/login/login.html";
+      pageUrl = "./src/pages/login/login.html";
       break;
     case "/register":
-      pageUrl = "/src/pages/register/register.html";
+      pageUrl = "./src/pages/register/register.html";
       break;
     case "/login-qr":
-      pageUrl = "/src/pages/login-qr/login-qr.html";
+      pageUrl = "./src/pages/login-qr/login-qr.html";
       break;
     case "/dashboard":
-      pageUrl = "/src/pages/dashboard/dashboard.html";
+      pageUrl = "./src/pages/dashboard/dashboard.html";
       break;
     // default:
     // pageUrl = "./pages/404.html";

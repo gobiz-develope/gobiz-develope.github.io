@@ -1,21 +1,21 @@
-import loadComponent from "/src/helpers/loadComponent.js";
-import smoothScroll from "/src/helpers/smoothScroll.js";
-import navbar from "/src/components/navbar/navbar.js";
-import catalogFilter from "/src/pages/catalog/catalog-filter/catalogFilter.js";
-import catalogDisplay from "/src/pages/catalog/catalog-display/catalogDisplay.js";
+import loadComponent from "../../helpers/loadComponent.js";
+import smoothScroll from "../../helpers/smoothScroll.js";
+import navbar from "../../components/navbar/navbar.js";
+import catalogFilter from "../../pages/catalog/catalog-filter/catalogFilter.js";
+import catalogDisplay from "../../pages/catalog/catalog-display/catalogDisplay.js";
 
 export default function loadCatalog() {
   const promises = [
-    loadComponent("header.navbar", "/src/components/navbar/navbar.html"),
+    loadComponent("header.navbar", "../../components/navbar/navbar.html"),
     loadComponent(
       ".catalog .catalog-filter",
-      "/src/pages/catalog/catalog-filter/catalog-filter.html"
+      "../../pages/catalog/catalog-filter/catalog-filter.html"
     ),
     loadComponent(
       ".catalog .catalog-display",
-      "/src/pages/catalog/catalog-display/catalog-display.html"
+      "../../pages/catalog/catalog-display/catalog-display.html"
     ),
-    loadComponent("footer.footer", "/src/components/footer/footer.html"),
+    loadComponent("footer.footer", "../../components/footer/footer.html"),
   ];
 
   Promise.all(promises)

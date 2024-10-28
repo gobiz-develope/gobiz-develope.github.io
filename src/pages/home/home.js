@@ -1,29 +1,29 @@
-import loadComponent from "/src/helpers/loadComponent.js";
-import smoothScroll from "/src/helpers/smoothScroll.js";
-import navbar from "/src/components/navbar/navbar.js";
-import hero from "/src/pages/home/hero/hero.js";
-import categories from "/src/pages/home/categories/categories.js";
-import slide from "/src/pages/home/partners/slide.js";
-import products from "/src/pages/home/products/products.js";
-import members from "/src/pages/home/members/members.js";
+import loadComponent from "../../helpers/loadComponent.js";
+import smoothScroll from "../../helpers/smoothScroll.js";
+import navbar from "../../components/navbar/navbar.js";
+import hero from "../../pages/home/hero/hero.js";
+import categories from "../../pages/home/categories/categories.js";
+import slide from "../../pages/home/partners/slide.js";
+import products from "../../pages/home/products/products.js";
+import members from "../../pages/home/members/members.js";
 
 export default function loadHome() {
   const promises = [
-    loadComponent("header.navbar", "/src/components/navbar/navbar.html"),
-    loadComponent(".home .hero", "/src/pages/home/hero/hero.html"),
+    loadComponent("header.navbar", "../../components/navbar/navbar.html"),
+    loadComponent(".home .hero", "../../pages/home/hero/hero.html"),
     loadComponent(
       ".home .categories",
-      "/src/pages/home/categories/categories.html"
+      "../../pages/home/categories/categories.html"
     ),
-    loadComponent(".home .products", "/src/pages/home/products/products.html"),
-    loadComponent(".home .join", "/src/pages/home/join/join.html"),
-    loadComponent(".home .members", "/src/pages/home/members/members.html"),
-    loadComponent(".home .partners", "/src/pages/home/partners/partners.html"),
+    loadComponent(".home .products", "../../pages/home/products/products.html"),
+    loadComponent(".home .join", "../../pages/home/join/join.html"),
+    loadComponent(".home .members", "../../pages/home/members/members.html"),
+    loadComponent(".home .partners", "../../pages/home/partners/partners.html"),
     loadComponent(
       ".home .testimonials",
-      "/src/pages/home/testimonials/testimonials.html"
+      "../../pages/home/testimonials/testimonials.html"
     ),
-    loadComponent("footer.footer", "/src/components/footer/footer.html"),
+    loadComponent("footer.footer", "../../components/footer/footer.html"),
   ];
 
   Promise.all(promises)

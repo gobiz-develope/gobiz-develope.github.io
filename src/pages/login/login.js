@@ -1,9 +1,9 @@
-import smoothScroll from "/src/helpers/smoothScroll.js";
-import fetchLog from "/src/pages/login/fetchlog.js";
-import loadComponent from "/src/helpers/loadComponent.js";
+import smoothScroll from "../../helpers/smoothScroll.js";
+import fetchLog from "../../pages/login/fetchlog.js";
+import loadComponent from "../../helpers/loadComponent.js";
 
 export default function loadLogin() {
-  const promise = loadComponent("", "/src/pages/login/login.html");
+  const promise = loadComponent("", "../../pages/login/login.html");
 
   promise
     .then(() => {

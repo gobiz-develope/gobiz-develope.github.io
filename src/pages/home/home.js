@@ -1,11 +1,11 @@
 import loadComponent from "../../helpers/loadComponent.js";
-import smoothScroll from "../../helpers/smoothScroll.js";
 import navbar from "../../components/navbar/navbar.js";
 import hero from "../../pages/home/hero/hero.js";
 import categories from "../../pages/home/categories/categories.js";
 import slide from "../../pages/home/partners/slide.js";
 import products from "../../pages/home/products/products.js";
 import members from "../../pages/home/members/members.js";
+import smoothScroll from "../../helpers/smoothscroll.js";
 
 export default function loadHome() {
   const promises = [

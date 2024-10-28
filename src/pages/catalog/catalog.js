@@ -1,8 +1,8 @@
 import loadComponent from "../../helpers/loadComponent.js";
-import smoothScroll from "../../helpers/smoothScroll.js";
 import navbar from "../../components/navbar/navbar.js";
 import catalogFilter from "../../pages/catalog/catalog-filter/catalogFilter.js";
 import catalogDisplay from "../../pages/catalog/catalog-display/catalogDisplay.js";
+import smoothScroll from "../../helpers/smoothscroll.js";
 
 export default function loadCatalog() {
   const promises = [

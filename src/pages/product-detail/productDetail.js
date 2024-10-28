@@ -1,8 +1,8 @@
 import loadComponent from "../../helpers/loadComponent.js";
 import navbar from "../../components/navbar/navbar.js";
-import smoothScroll from "../../helpers/smoothScroll.js";
 import productDetailHeader from "./header/header.js";
 import productDetailImage from "./image/image.js";
+import smoothScroll from "../../helpers/smoothscroll.js";
 
 export default function loadProductDetail() {
   const promises = [
